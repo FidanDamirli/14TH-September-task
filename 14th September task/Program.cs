@@ -13,6 +13,19 @@ public class HelloWorld
         {
             Console.WriteLine(number);
         }
+
+        string sentence = "Hikmet  Abbasov";
+
+        SentenceWithoutSpaces(ref sentence);
+        Console.WriteLine(sentence);
+
+        int[] numberss = { 1, 5, 7 };
+
+        AddNewNum(ref numberss, 3);
+        for (int i = 0; i < numberss.Length; i++)
+        {
+            Console.WriteLine(numberss[i]);
+        }
     }
 
     #region Task 1
@@ -32,5 +45,45 @@ public class HelloWorld
         return array;
     }
     #endregion
+
+    #region Task 3
+
+    static void SentenceWithoutSpaces(ref string words)
+    {
+        string newWord = "";
+        for (int i = 0; i < words.Length; i++)
+        {
+
+            if (words[i]!= ' ')
+            {
+                newWord += words[i];
+
+            }
+
+
+        }
+
+        words = newWord;
+    }
+
+    #endregion
+
+    #region Task 4
+
+    static void AddNewNum(ref int[]numbers, int num)
+    {
+        int[]newNumbers=new int[numbers.Length+1];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            newNumbers[i] = numbers[i];
+
+        }
+        newNumbers[numbers.Length] = num;
+        numbers = newNumbers;
+    }
+
+    #endregion
+
+
 }
 
